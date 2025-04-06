@@ -1,0 +1,57 @@
+diff --git a/src/configuration.h b/src/configuration.h
+index d319ddb0a..4e3195084 100644
+--- a/src/configuration.h
++++ b/src/configuration.h
+@@ -308,17 +308,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ // #define MESHTASTIC_MINIMIZE_BUILD 1
+ #ifdef MESHTASTIC_MINIMIZE_BUILD
+-#define MESHTASTIC_EXCLUDE_MODULES 1
+-#define MESHTASTIC_EXCLUDE_WIFI 1
+-#define MESHTASTIC_EXCLUDE_BLUETOOTH 1
+-#define MESHTASTIC_EXCLUDE_GPS 1
+-#define MESHTASTIC_EXCLUDE_SCREEN 1
+ #define MESHTASTIC_EXCLUDE_MQTT 1
+-#define MESHTASTIC_EXCLUDE_POWERMON 1
+-#define MESHTASTIC_EXCLUDE_I2C 1
+-#define MESHTASTIC_EXCLUDE_PKI 1
+-#define MESHTASTIC_EXCLUDE_POWER_FSM 1
+-#define MESHTASTIC_EXCLUDE_TZ 1
++#define MESHTASTIC_EXCLUDE_ADMIN 1
++#define MESHTASTIC_EXCLUDE_ATAK 1
++#define MESHTASTIC_EXCLUDE_CANNEDMESSAGES 1
++#define MESHTASTIC_EXCLUDE_STOREFORWARD 1
++#define MESHTASTIC_EXCLUDE_RANGETEST 1
++#define MESHTASTIC_EXCLUDE_PAXCOUNTER 1
++#define MESHTASTIC_EXCLUDE_EXTERNALNOTIFICATION 1
++#define MESHTASTIC_EXCLUDE_ENVIRONMENTAL_SENSOR 1
++#define MESHTASTIC_EXCLUDE_HEALTH_TELEMETRY 1
++#define MESHTASTIC_EXCLUDE_DETECTIONSENSOR 1
++#define MESHTASTIC_EXCLUDE_REMOTEHARDWARE 1
++#define MESHTASTIC_EXCLUDE_POWER_TELEMETRY 1
++#define MESHTASTIC_EXCLUDE_AUDIO 1
+ #endif
+ 
+ // Turn off all optional modules
+diff --git a/variants/heltec_v2.1/platformio.ini b/variants/heltec_v2.1/platformio.ini
+index ea2281911..ae1151934 100644
+--- a/variants/heltec_v2.1/platformio.ini
++++ b/variants/heltec_v2.1/platformio.ini
+@@ -5,4 +5,5 @@ extends = esp32_base
+ board = heltec_wifi_lora_32_V2
+ build_flags = 
+   ${esp32_base.build_flags} -D HELTEC_V2_1 -I variants/heltec_v2.1
+-  -DGPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
+\ No newline at end of file
++  -DGPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
++  -D MESHTASTIC_MINIMIZE_BUILD=1
+\ No newline at end of file
+diff --git a/variants/heltec_v3/platformio.ini b/variants/heltec_v3/platformio.ini
+index 4be96b019..c1d2dff13 100644
+--- a/variants/heltec_v3/platformio.ini
++++ b/variants/heltec_v3/platformio.ini
+@@ -6,3 +6,4 @@ board_build.partitions = default_8MB.csv
+ build_flags = 
+   ${esp32s3_base.build_flags} -D HELTEC_V3 -I variants/heltec_v3
+   -D GPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
++  -D MESHTASTIC_MINIMIZE_BUILD=1
