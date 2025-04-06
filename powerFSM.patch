@@ -1,0 +1,12 @@
+diff --git a/src/PowerFSM.cpp b/src/PowerFSM.cpp
+index 4c4d203c2..0d18f6986 100644
+--- a/src/PowerFSM.cpp
++++ b/src/PowerFSM.cpp
+@@ -273,6 +273,7 @@ void PowerFSM_setup()
+                              config.device.role == meshtastic_Config_DeviceConfig_Role_TAK_TRACKER ||
+                              config.device.role == meshtastic_Config_DeviceConfig_Role_SENSOR;
+     bool hasPower = isPowered();
++    bool isWifiAvailable = 0;
+ 
+     LOG_INFO("PowerFSM init, USB power=%d", hasPower ? 1 : 0);
+     powerFSM.add_timed_transition(&stateBOOT, hasPower ? &statePOWER : &stateON, 3 * 1000, NULL, "boot timeout");
