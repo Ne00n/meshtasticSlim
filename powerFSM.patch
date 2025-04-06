@@ -1,5 +1,5 @@
 diff --git a/src/PowerFSM.cpp b/src/PowerFSM.cpp
-index 4c4d203c2..0d18f6986 100644
+index 4c4d203c2..da938ef3e 100644
 --- a/src/PowerFSM.cpp
 +++ b/src/PowerFSM.cpp
 @@ -273,6 +273,7 @@ void PowerFSM_setup()
@@ -10,3 +10,12 @@ index 4c4d203c2..0d18f6986 100644
  
      LOG_INFO("PowerFSM init, USB power=%d", hasPower ? 1 : 0);
      powerFSM.add_timed_transition(&stateBOOT, hasPower ? &statePOWER : &stateON, 3 * 1000, NULL, "boot timeout");
+@@ -383,7 +384,7 @@ void PowerFSM_setup()
+     // See: https://github.com/meshtastic/firmware/issues/1071
+     // Don't add power saving transitions if we are a power saving tracker or sensor or have Wifi enabled. Sleep will be initiated
+     // through the modules
+-    if ((isRouter || config.power.is_power_saving) && !isWifiAvailable() && !isTrackerOrSensor) {
++    if ((isRouter || config.power.is_power_saving) && !isWifiAvailable && !isTrackerOrSensor) {
+         powerFSM.add_timed_transition(&stateNB, &stateLS,
+                                       Default::getConfiguredOrDefaultMs(config.power.min_wake_secs, default_min_wake_secs), NULL,
+                                       "Min wake timeout");
