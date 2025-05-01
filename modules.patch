@@ -1,13 +1,13 @@
 diff --git a/src/configuration.h b/src/configuration.h
-index d319ddb0a..420544eea 100644
+index d319ddb0a..2fde0d522 100644
 --- a/src/configuration.h
 +++ b/src/configuration.h
-@@ -308,17 +308,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+@@ -308,17 +308,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
  // #define MESHTASTIC_MINIMIZE_BUILD 1
  #ifdef MESHTASTIC_MINIMIZE_BUILD
 -#define MESHTASTIC_EXCLUDE_MODULES 1
- #define MESHTASTIC_EXCLUDE_WIFI 1
+-#define MESHTASTIC_EXCLUDE_WIFI 1
 -#define MESHTASTIC_EXCLUDE_BLUETOOTH 1
 -#define MESHTASTIC_EXCLUDE_GPS 1
 -#define MESHTASTIC_EXCLUDE_SCREEN 1
