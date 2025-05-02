@@ -1,23 +1,10 @@
-diff --git a/variants/heltec_v2.1/platformio.ini b/variants/heltec_v2.1/platformio.ini
-index ea2281911..ae1151934 100644
---- a/variants/heltec_v2.1/platformio.ini
-+++ b/variants/heltec_v2.1/platformio.ini
-@@ -5,4 +5,5 @@ extends = esp32_base
- board = heltec_wifi_lora_32_V2
- build_flags = 
-   ${esp32_base.build_flags} -D HELTEC_V2_1 -I variants/heltec_v2.1
--  -DGPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
-\ No newline at end of file
-+  -DGPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
-+  -D MESHTASTIC_MINIMIZE_BUILD=1
-\ No newline at end of file
 diff --git a/variants/heltec_v3/platformio.ini b/variants/heltec_v3/platformio.ini
-index 4be96b019..a9fe9b398 100644
+index 4be96b019..af9840e52 100644
 --- a/variants/heltec_v3/platformio.ini
 +++ b/variants/heltec_v3/platformio.ini
 @@ -6,3 +6,4 @@ board_build.partitions = default_8MB.csv
  build_flags = 
    ${esp32s3_base.build_flags} -D HELTEC_V3 -I variants/heltec_v3
    -D GPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
-+  -D MESHTASTIC_MINIMIZE_BUILD=1
++  -DMESHTASTIC_MINIMIZE_BUILD=1
 \ No newline at end of file
