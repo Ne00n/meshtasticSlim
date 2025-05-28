@@ -6,5 +6,5 @@ index 4be96b019..af9840e52 100644
  build_flags = 
    ${esp32s3_base.build_flags} -D HELTEC_V3 -I variants/heltec_v3
    -D GPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
-+  -DMESHTASTIC_MINIMIZE_BUILD=1
++  -DMESHTASTIC_EXCLUDE_WIFI=1
 \ No newline at end of file
