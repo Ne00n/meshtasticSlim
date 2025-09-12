@@ -1,4 +1,4 @@
-diff --git a/variants/heltec_v3/platformio.ini b/variants/heltec_v3/platformio.ini
+diff --git a/variants/heltec_v3/platformio.ini b/variants/esp32s3/heltec_v3/platformio.ini
 index 4be96b019..af9840e52 100644
 --- a/variants/heltec_v3/platformio.ini
 +++ b/variants/heltec_v3/platformio.ini
