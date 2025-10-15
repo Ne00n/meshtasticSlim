@@ -1,11 +1,33 @@
 diff --git a/variants/esp32s3/heltec_v3/platformio.ini b/variants/esp32s3/heltec_v3/platformio.ini
-index b521e11ca..ccd54221d 100644
+index af0854e49..a3cb99d6f 100644
 --- a/variants/esp32s3/heltec_v3/platformio.ini
 +++ b/variants/esp32s3/heltec_v3/platformio.ini
-@@ -9,3 +9,5 @@ build_flags =
+@@ -8,3 +8,16 @@ build_flags =
+   ${esp32s3_base.build_flags}
    -D HELTEC_V3
    -I variants/esp32s3/heltec_v3
-   -D GPS_POWER_TOGGLE ; comment this line to disable triple press function on the user button to turn off gps entirely.
++  -DMESHTASTIC_EXCLUDE_MQTT=1
++  -DMESHTASTIC_EXCLUDE_ATAK=1
++  -DMESHTASTIC_EXCLUDE_ADMIN=1
++  -DMESHTASTIC_EXCLUDE_I2C=1
++  -DMESHTASTIC_EXCLUDE_AUDIO=1
++  -DMESHTASTIC_EXCLUDE_REMOTEHARDWARE=1
++  -DMESHTASTIC_EXCLUDE_EXTERNALNOTIFICATION=1
++  -DMESHTASTIC_EXCLUDE_ENVIRONMENTAL_SENSOR=1
++  -DMESHTASTIC_EXCLUDE_DETECTIONSENSOR=1
++  -DMESHTASTIC_EXCLUDE_CANNEDMESSAGES=1
++  -DMESHTASTIC_EXCLUDE_RANGETEST=1
++  -DMESHTASTIC_EXCLUDE_PAXCOUNTER=1
++  -DMESHTASTIC_EXCLUDE_DROPZONE=1
+\ No newline at end of file
+diff --git a/variants/esp32s3/heltec_v4/platformio.ini b/variants/esp32s3/heltec_v4/platformio.ini
+index 7057f9646..e2080e4ed 100644
+--- a/variants/esp32s3/heltec_v4/platformio.ini
++++ b/variants/esp32s3/heltec_v4/platformio.ini
+@@ -7,3 +7,16 @@ build_flags =
+   ${esp32s3_base.build_flags}
+   -D HELTEC_V4
+   -I variants/esp32s3/heltec_v4
 +  -DMESHTASTIC_EXCLUDE_MQTT=1
 +  -DMESHTASTIC_EXCLUDE_ATAK=1
 +  -DMESHTASTIC_EXCLUDE_ADMIN=1
